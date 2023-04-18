@@ -1,0 +1,90 @@
+:root {
+  --blur: 10px;
+  --width: 400px;
+  --height: 500px;
+  --background: #fff; }
+
+.itQuelleModal {
+  transition: opacity 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(var(--blur)); }
+  .itQuelleModal.Docked {
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: auto; }
+    .itQuelleModal.Docked .__View .__ViewContent {
+      overflow: inherit; }
+  .itQuelleModal.Hide {
+    display: none; }
+  .itQuelleModal .__View {
+    box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    background: var(--background);
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    position: relative; }
+    @media screen and (max-width: 400px) {
+      .itQuelleModal .__View {
+        width: 100%; } }
+    .itQuelleModal .__View .__Close {
+      position: absolute;
+      top: 5px;
+      right: 5px; }
+      .itQuelleModal .__View .__Close .__CloseButton {
+        padding: 0.2rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        -webkit-border-radius: 6px; }
+        .itQuelleModal .__View .__Close .__CloseButton:hover {
+          background: #eee; }
+        .itQuelleModal .__View .__Close .__CloseButton:active {
+          background: #e2e2e2; }
+    .itQuelleModal .__View .__ViewContent {
+      display: none;
+      width: 100%;
+      max-height: 100%;
+      overflow: auto; }
+      .itQuelleModal .__View .__ViewContent.Show {
+        display: inline-block; }
+    .itQuelleModal .__View .__Loading {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center; }
+      .itQuelleModal .__View .__Loading.Hide {
+        display: none; }
+      .itQuelleModal .__View .__Loading .__Load {
+        margin: 0 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #6200EA;
+        animation: rotating-spinner 1s linear infinite; }
+
+@keyframes rotating-spinner {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=itquelle.modalviewer.css.map */
